@@ -1,13 +1,12 @@
 package example
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import kotlin.test.*
 
 class HelloTest {
 
     @Test
-    fun `hello returns greeting words`() {
-        assertThat(Hello.hello("you")).isEqualTo("Hello, you!")
+    fun testHello() {
+        assertEquals(hello("you"), "Hello, you!")
     }
 
 }

@@ -1,13 +1,8 @@
-Kotlin Hello World Demo
+Kotlin JS Hello World Demo
 =======================
 
-Hello world from kotlin.
+Hello world from kotlin-js, it uses mocha on the backend.
 
-```
-./gradlew run
-```
-
-You will see "Hello, Kotlin!" from console.
 
 Run tests:
 
