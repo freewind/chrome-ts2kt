@@ -6,16 +6,13 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.moowork.gradle:gradle-node-plugin:1.2.0'
     }
 
 }
 
 apply plugin: 'kotlin2js'
-apply plugin: 'com.moowork.node'
 
 repositories {
-    mavenCentral()
     jcenter()
 }
 
@@ -23,35 +20,6 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
 }
-
-[compileKotlin2Js, compileTestKotlin2Js]*.configure {
-    kotlinOptions.moduleKind = "commonjs"
-}
-
-task populateNodeModules(type: Copy, dependsOn: compileKotlin2Js) {
-    from compileKotlin2Js.destinationDir
-
-    configurations.testCompile.each {
-        from zipTree(it.absolutePath).matching { include '*.js' }
-    }
-
-    into "${buildDir}/node_modules"
-}
-
-node {
-    download = true
-}
-
-task installMocha(type: NpmTask) {
-    args = ['install', 'mocha']
-}
-
-task runMocha(type: NodeTask, dependsOn: [compileTestKotlin2Js, populateNodeModules, installMocha]) {
-    script = file('node_modules/mocha/bin/mocha')
-    args = [compileTestKotlin2Js.outputFile]
-}
-
-test.dependsOn runMocha
 
 task wrapper(type: Wrapper) {
     gradleVersion = "4.6"

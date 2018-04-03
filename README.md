@@ -1,15 +1,17 @@
 Kotlin JS Hello World Demo
 =======================
 
-Hello world from kotlin-js, it uses mocha on the backend.
+Hello world from kotlin-js.
 
 
-Run tests:
+Run:
 
 ```
-./gradlew test
+./gradlew clean compileKotlin2Js
+npm install -g http-server
+http-server .
 ```
 
-You will see test result from console.
+Open <http://localhost:8080/index.html> from your browser, you will see "Hello, Kotlin!" in console of your browser's developer panel.
 
 
