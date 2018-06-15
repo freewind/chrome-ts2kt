@@ -7,11 +7,10 @@ Hello world from kotlin-js.
 Run:
 
 ```
-./gradlew clean compileKotlin2Js
-npm install -g http-server
-http-server .
+./gradlew compileKotlin2Js
+open index.html
 ```
 
-Open <http://localhost:8080/index.html> from your browser, you will see "Hello, Kotlin!" in console of your browser's developer panel.
+You will see "Hello, Kotlin!" in console of your browser's developer panel.
 
 
