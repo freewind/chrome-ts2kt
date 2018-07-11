@@ -14,7 +14,7 @@ apply plugin: 'kotlin2js'
 apply plugin: 'maven'
 
 group "freewind"
-version "0.0.1"
+version "0.0.2"
 
 repositories {
     mavenLocal()
