@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.41'
+    ext.kotlin_version = '1.2.50'
     repositories {
         mavenCentral()
         maven { url("https://plugins.gradle.org/m2/") }
@@ -11,8 +11,13 @@ buildscript {
 }
 
 apply plugin: 'kotlin2js'
+apply plugin: 'maven'
+
+group "freewind"
+version "0.0.1"
 
 repositories {
+    mavenLocal()
     jcenter()
 }
 
