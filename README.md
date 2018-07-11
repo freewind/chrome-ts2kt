@@ -1,16 +1,12 @@
-Kotlin JS Hello World Demo
-=======================
-
-Hello world from kotlin-js.
-
-
-Run:
+Kotlin Wrapper for Chrome Api
+============================
 
 ```
-./gradlew compileKotlin2Js
-open index.html
+./gradlew install
 ```
 
-You will see "Hello, Kotlin!" in console of your browser's developer panel.
+Then use in other project:
 
-
+```
+compile "freewind:k_chrome_api:0.0.1"
+```
