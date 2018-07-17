@@ -1,20 +1,49 @@
 Chrome Kotlin Api converted by ts2kt
 ====================================
 
+Modify names when copy this project
+-----------------------------------
+
+- `README.md`
+- `build.gradle`
+- `generated/package.json`
+
+Modify version before publishing
+--------------------------------
+
+- `README.md`
+- `build.gradle`
+- `generated/package.json`
+
+Publish
+-------
+
 ```
 ./gradlew install
+./gradlew bintrayUpload
+```
+
+```
+cd generated
+npm publish
 ```
 
 Then use in other project:
 
 ```
-compile "freewind:chrome-ts2kt:1.0.0"
+repositories {
+    maven { url 'https://dl.bintray.com/freewind/maven/' }
+}
+
+dependencies {
+    compile "freewind:chrome-ts2kt:0.1.1"
+}
 ```
 
-And for now, we also need to copy the generated js file to the target project. (Later I may provide npm package):
+also:
 
 ```
-cp build/classes/kotlin/main/chrome-ts2kt.js target-project/
+npm install --save chrome-ts2kt
 ```
 
 Resources
@@ -33,3 +62,5 @@ wget https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/ty
 npm install -g ts2kt
 ts2kt index.d.ts
 ```
+
+Then copy the files to `src/main/kotlin/chrome`

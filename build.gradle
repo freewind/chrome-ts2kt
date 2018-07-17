@@ -1,24 +1,58 @@
 buildscript {
-    ext.kotlin_version = '1.2.50'
+    ext.kotlin_version = '1.2.51'
     repositories {
-        mavenCentral()
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        jcenter()
         maven { url("https://plugins.gradle.org/m2/") }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 
 }
 
 apply plugin: 'kotlin2js'
 apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
 
-group "freewind"
-version "1.0.0"
+ext {
+    // have to change
+    publishedGroupId = 'freewind.demos'
+    // `artifact` also use as and `bintray.pkg.name` for simplifying
+    artifact = 'chrome-ts2kt'
+    libraryVersion = '0.1.1'
+    // `libraryName` also uses as `bintray.pkg.libraryName` and `bintray.pkg.version.libraryName`
+    libraryName = 'Chrome Api created by ts2kt'
+
+    siteUrl = 'https://github.com/freewind/chrome-ts2kt'
+
+    // normally no need to change
+    repoName = 'maven'
+
+    gitUrl = "${siteUrl}.git"
+
+    developerId = 'freewind'
+    developerName = 'Freewind'
+    developerEmail = 'nowindlee@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+compileKotlin2Js {
+    kotlinOptions.outputFile = "${projectDir}/generated/${artifact}.js"
+}
 
 repositories {
     mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
     jcenter()
+    maven { url 'https://dl.bintray.com/freewind/maven/' }
 }
 
 dependencies {
@@ -26,6 +60,4 @@ dependencies {
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "4.6"
-}
+apply from: 'bintray.gradle'

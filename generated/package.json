@@ -1,0 +1,23 @@
+{
+  "name": "chrome-ts2kt",
+  "version": "0.1.1",
+  "description": "Chrome Kotlin Api converted by ts2kt",
+  "main": "chrome-ts2kt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freewind/chrome-ts2kt.git"
+  },
+  "keywords": [
+    "kotlin-js",
+    "chrome"
+  ],
+  "author": "nowindlee@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freewind/chrome-ts2kt/issues"
+  },
+  "homepage": "https://github.com/freewind/chrome-ts2kt#readme"
+}
