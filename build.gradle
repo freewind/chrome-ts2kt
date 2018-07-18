@@ -20,7 +20,7 @@ apply plugin: 'com.jfrog.bintray'
 
 ext {
     // have to change
-    publishedGroupId = 'freewind.demos'
+    publishedGroupId = 'freewind.github.com'
     // `artifact` also use as and `bintray.pkg.name` for simplifying
     artifact = 'chrome-ts2kt'
     libraryVersion = '0.1.1'
