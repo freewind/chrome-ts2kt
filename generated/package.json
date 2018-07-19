@@ -1,6 +1,6 @@
 {
   "name": "chrome-ts2kt",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Chrome Kotlin Api converted by ts2kt",
   "main": "chrome-ts2kt.js",
   "scripts": {

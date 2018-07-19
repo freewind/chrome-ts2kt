@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    compile "freewind.github.com:chrome-ts2kt:0.1.1"
+    compile "freewind.github.com:chrome-ts2kt:0.2.0"
 }
 ```
 

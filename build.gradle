@@ -23,7 +23,7 @@ ext {
     publishedGroupId = 'freewind.github.com'
     // `artifact` also use as and `bintray.pkg.name` for simplifying
     artifact = 'chrome-ts2kt'
-    libraryVersion = '0.1.1'
+    libraryVersion = '0.2.0'
     // `libraryName` also uses as `bintray.pkg.libraryName` and `bintray.pkg.version.libraryName`
     libraryName = 'Chrome Api created by ts2kt'
 
