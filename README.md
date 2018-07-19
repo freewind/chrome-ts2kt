@@ -24,8 +24,8 @@ Publish
 ```
 
 ```
-cd generated
-npm publish
+./npm-link.sh
+cd npm-publish; npm publish
 ```
 
 Then use in other project:
@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    compile "freewind.github.com:chrome-ts2kt:0.2.0"
+    compile "freewind.github.com:chrome-ts2kt:0.3.0"
 }
 ```
 
